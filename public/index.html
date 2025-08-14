@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Haberler</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="index.html">🗞️ Haberler</a>
+    <nav><a class="btn" href="admin.html">Admin</a></nav>
+  </header>
+
+  <main class="container">
+    <h1>Gündem</h1>
+    <div id="cards" class="grid"></div>
+    <p id="empty" class="muted" hidden>Henüz bir haber yok. <a href="admin.html">Admin panelinden</a> haber ekleyin.</p>
+  </main>
+
+  <footer class="site-footer">
+    <p>© <span id="year"></span> Haberler — Demo</p>
+  </footer>
+
+  <script src="js/api.js"></script>
+  <script src="js/main.js"></script>
+  <!-- ÖNCE storage yardımcıları -->
+<script src="strogeData.js"></script>
+
+<!-- SONRA uygulama kodların -->
+<script src="app.js"></script>      <!-- varsa -->
+<script src="admin.js"></script>    <!-- admin sayfasında varsa -->
+</body>
+</html>
+
+</body>
+</html>
+
+

@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Admin Paneli</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="auth-page">
+  <div id="loginCard" class="auth-card" hidden>
+    <h1>Admin Girişi</h1>
+    <form id="loginForm" class="stack">
+      <label for="username">Kullanıcı Adı</label>
+      <input id="username" autocomplete="username" placeholder="admin2" required>
+      <label for="password">Şifre</label>
+      <input id="password" type="password" autocomplete="current-password" placeholder="••••" required>
+      <button type="submit" class="btn">Giriş Yap</button>
+      <p class="hint">Demo: <b>admin2</b> / <b>5555</b></p>
+      <p id="err" class="error" hidden></p>
+    </form>
+  </div>
+
+  <main id="adminPanel" class="admin" hidden>
+    <header class="admin-topbar">
+      <a class="brand" href="index.html">🗞️ Haberler</a>
+      <div class="spacer"></div>
+      <button id="logoutBtn" class="btn outline">Çıkış</button>
+    </header>
+
+    <section class="container">
+      <div class="admin-grid">
+        <div class="card">
+          <h2>Yeni Haber / Düzenle</h2>
+          <form id="postForm" class="stack" autocomplete="off">
+            <input type="hidden" id="postId">
+            <label for="title">Haber Başlığı</label>
+            <input id="title" placeholder="Başlık" required>
+
+            <label for="cover">Kapak Fotoğrafı</label>
+            <input id="cover" type="file" accept="image/*">
+            <div id="coverPreview" class="media-preview"></div>
+
+            <label for="media">Ek Medya (Resim/Video) — birden fazla seçilebilir</label>
+            <input id="media" type="file" accept="image/*,video/*" multiple>
+            <div id="mediaPreview" class="media-preview grid"></div>
+
+            <label>Haber Yazısı</label>
+            <div class="toolbar" id="toolbar">
+              <button type="button" data-cmd="undo">↶</button>
+              <button type="button" data-cmd="redo">↷</button>
+              <span class="sep"></span>
+              <button type="button" data-cmd="bold"><b>B</b></button>
+              <button type="button" data-cmd="italic"><i>I</i></button>
+              <button type="button" data-cmd="underline"><u>U</u></button>
+              <button type="button" data-cmd="strikeThrough"><s>S</s></button>
+              <span class="sep"></span>
+              <select id="block">
+                <option value="P">Paragraf</option>
+                <option value="H2">Başlık 2</option>
+                <option value="H3">Başlık 3</option>
+                <option value="BLOCKQUOTE">Alıntı</option>
+              </select>
+              <select id="fontSize">
+                <option value="3">Normal</option>
+                <option value="4">Büyük</option>
+                <option value="5">Daha Büyük</option>
+                <option value="6">Çok Büyük</option>
+              </select>
+              <span class="sep"></span>
+              <button type="button" data-cmd="justifyLeft">Sol</button>
+              <button type="button" data-cmd="justifyCenter">Orta</button>
+              <button type="button" data-cmd="justifyRight">Sağ</button>
+              <span class="sep"></span>
+              <button type="button" data-cmd="insertUnorderedList">• Liste</button>
+              <button type="button" data-cmd="insertOrderedList">1. Liste</button>
+              <button type="button" id="addLink">Bağlantı</button>
+              <button type="button" id="removeFormat">Temizle</button>
+            </div>
+            <div id="editor" class="editor" contenteditable="true" spellcheck="true" placeholder="Haber metnini buraya yazın..."></div>
+
+            <div class="actions">
+              <button type="submit" class="btn">Kaydet / Yayınla</button>
+              <button type="button" id="resetBtn" class="btn outline">Yeni Temiz Form</button>
+            </div>
+            <p id="saveMsg" class="success" hidden>Kaydedildi!</p>
+          </form>
+        </div>
+
+        <div class="card">
+          <h2>Yayınlanan Haberler</h2>
+          <table class="table" id="postTable">
+            <thead><tr><th>Kapak</th><th>Başlık</th><th>Tarih</th><th>İşlemler</th></tr></thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="js/api.js"></script>
+  <script src="js/admin.js"></script>
+  <!-- ÖNCE storage yardımcıları -->
+<script src="strogeData.js"></script>
+
+<!-- SONRA uygulama kodların -->
+<script src="app.js"></script>      <!-- varsa -->
+<script src="admin.js"></script>    <!-- admin sayfasında varsa -->
+</body>
+</html>
+</body>
+</html>
+
+

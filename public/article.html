@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Haber</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="index.html">🗞️ Haberler</a>
+    <nav><a class="btn" href="admin.html">Admin</a></nav>
+  </header>
+
+  <main class="container">
+    <article id="post" class="post">
+      <div id="hero" class="hero"></div>
+      <h1 id="title"></h1>
+      <p class="meta" id="meta"></p>
+      <div id="gallery" class="gallery" hidden></div>
+      <div id="content" class="content"></div>
+      <div class="post-actions">
+        <a class="btn outline" href="index.html">← Ana sayfaya dön</a>
+        <button id="shareBtn" class="btn">Paylaş</button>
+      </div>
+    </article>
+
+    <section id="not-found" class="not-found" hidden>
+      <h2>Haber bulunamadı</h2>
+      <p>Aradığınız haber silinmiş veya hiç yok.</p>
+      <a class="btn" href="index.html">Ana sayfaya dön</a>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>© <span id="year"></span> Haberler — Demo</p>
+  </footer>
+
+  <script src="js/api.js"></script>
+  <script src="js/post.js"></script>
+</body>
+</html>
+
+
+

@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Admin Girişi</title>
+  <link rel="stylesheet" href="css/style.css">
+  <meta name="color-scheme" content="dark light">
+</head>
+<body class="auth-page">
+  <noscript>
+    <div class="auth-card" style="max-width:420px;margin:24px auto">
+      <p class="error">Bu sayfa için JavaScript gerekli. Lütfen tarayıcınızda JavaScript’i etkinleştirin.</p>
+    </div>
+  </noscript>
+
+  <div class="auth-card">
+    <h1>Admin Girişi</h1>
+
+    <form id="loginForm" autocomplete="on">
+      <label for="username">Kullanıcı Adı</label>
+      <input
+        id="username"
+        name="username"
+        inputmode="text"
+        autocomplete="username"
+        placeholder="admin2"
+        required
+        autofocus
+      >
+
+      <label for="password">Şifre</label>
+      <input
+        id="password"
+        name="password"
+        type="password"
+        autocomplete="current-password"
+        placeholder="••••"
+        required
+        minlength="4"
+      >
+
+      <button type="submit" class="btn">Giriş Yap</button>
+      <p class="hint">Demo: <b>admin2</b> / <b>5555</b></p>
+
+      <!-- Erişilebilir hata alanı -->
+      <p id="err" class="error" hidden aria-live="polite"></p>
+    </form>
+  </div>
+
+  <script src="js/auth.js" defer></script>
+</body>
+</html>
