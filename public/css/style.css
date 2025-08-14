@@ -80,5 +80,8 @@ a:hover{text-decoration:underline}
 .table td:last-child{border-right:1px solid rgba(255,255,255,.08);border-radius:0 10px 10px 0}
 
 .not-found{background:var(--card);border-radius:var(--radius);padding:24px;text-align:center;box-shadow:var(--shadow)}
+.btn[href="login.html"] {
+  display: none;
+}
 
 
