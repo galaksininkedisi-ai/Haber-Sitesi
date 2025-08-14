@@ -194,5 +194,24 @@ app.get("*", (req, res) => {
 app.listen(PORT, () => {
   console.log(`✅ Server running on ${BASE_URL}`);
 });
+const express = require('express');
+const jwt = require('jsonwebtoken');
+const path = require('path');
+const app = express();
+
+app.use(express.json());
+app.use(express.static('public'));
+
+app.post('/api/login', (req, res) => {
+  const { username, password } = req.body || {};
+  if (username === process.env.ADMIN_USER && password === process.env.ADMIN_PASS) {
+    const token = jwt.sign({ u: username }, process.env.JWT_SECRET, { expiresIn: '7d' });
+    return res.json({ token });
+  }
+  res.status(401).json({ error: 'Kullanıcı adı veya şifre hatalı' });
+});
+
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, '0.0.0.0', () => console.log('up on', PORT));
 
 

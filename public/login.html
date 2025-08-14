@@ -50,4 +50,31 @@
 
   <script src="js/auth.js" defer></script>
 </body>
+<form id="loginForm">   <!-- method/action yazma; JS yakalayacak -->
+  <label for="username">Kullanıcı Adı</label>
+  <input id="username" autocomplete="username" placeholder="admin2">
+
+  <label for="password">Şifre</label>
+  <input id="password" type="password" autocomplete="current-password" placeholder="••••">
+
+  <button type="submit" class="btn">Giriş Yap</button>
+  <p id="err" class="error" hidden></p>
+</form>
+
+<script src="js/api.js"></script>
+<form id="loginForm">
+  <label for="username">Kullanıcı Adı</label>
+  <input id="username" autocomplete="username">
+
+  <label for="password">Şifre</label>
+  <input id="password" type="password" autocomplete="current-password">
+
+  <button type="submit">Giriş Yap</button>
+  <p id="err" hidden class="error"></p>
+</form>
+
+<script src="js/api.js"></script>
+<script src="js/login.js"></script>
+
+
 </html>
